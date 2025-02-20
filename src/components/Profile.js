@@ -7,6 +7,7 @@ import {
   DialogContent, DialogActions, Paper 
 } from '@mui/material';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/Profile.png'; // Import the background image
 
 function Profile() {
@@ -16,6 +17,7 @@ function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [cancelLoading, setCancelLoading] = useState(false);
+  const navigate = useNavigate();
 
   // Snackbar State
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -121,6 +123,10 @@ function Profile() {
     }
   };
 
+  const handleViewBookedPersons = (ticketId) => {
+    navigate(`/booked-persons/${ticketId}`);
+  };
+
   return (
     <Box
       sx={{
@@ -145,7 +151,7 @@ function Profile() {
         },
       }}
     >
-      <Container sx={{ position: 'relative', zIndex: 1, maxWidth: '600px', paddingBottom: '40px' }}>
+      <Container sx={{ position: 'relative', zIndex: 1, maxWidth: '600px', paddingBottom: '40px' ,marginTop: '50px', marginBottom: '50px'}}>
         <Paper sx={{ padding: '40px', backgroundColor: 'white', borderRadius: '8px' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
             <i className="bi bi-person-circle" style={{ fontSize: '6rem' }}></i>
@@ -221,6 +227,14 @@ function Profile() {
                           </>
                         }
                       />
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="small"
+                        onClick={() => handleViewBookedPersons(ticket.id)}
+                      >
+                        View Booked Persons
+                      </Button>
                     </ListItem>
                   ))}
                 </List>

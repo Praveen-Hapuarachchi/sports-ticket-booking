@@ -9,6 +9,7 @@ import WelcomePage from './components/WelcomePage';
 import Matches from './components/Matches'; // Import the Matches component
 import AddTickets from './components/AddTickets'; // Import the AddTickets component
 import Profile from './components/Profile'; // Import the Profile component
+import BookedPersons from './components/BookedPersons'; // Import the BookedPersons component
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'; // Import the Footer component
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -28,6 +29,7 @@ function App() {
               <Route path="/matches" element={<Matches />} /> {/* Add the Matches route */}
               <Route path="/add-tickets" element={<AddTickets />} /> {/* Add the AddTickets route */}
               <Route path="/profile" element={<Profile />} /> {/* Add the Profile route */}
+              <Route path="/booked-persons/:ticketId" element={<BookedPersons />} /> {/* Add the BookedPersons route */}
             </Routes>
           </Box>
           <Footer />

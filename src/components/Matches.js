@@ -84,7 +84,7 @@ function Matches() {
   };
 
   return (
-    <Container sx={{ marginTop: '50px' }}>
+    <Container sx={{ marginTop: '50px', marginBottom: '50px' }}>
       <Typography variant="h4" gutterBottom>
         All Matches
       </Typography>
